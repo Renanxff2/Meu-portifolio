@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Meu portfólio</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header id="header" class="fade-in">
+    <h1>Renan Viana Bezerra</h1>
+    <img src="/imgs/20241227_204756.jpg" alt="Foto de Renan" class="foto-perfil" />
+    <p>Desenvolvedor Full-Stack em formação.</p>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="mostrarSecao('sobre')">Sobre</a></li>
+        <li><a href="#" onclick="mostrarSecao('projetos')">Projetos</a></li>
+        <li><a href="#" onclick="mostrarSecao('redes-sociais')">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="sobre" class="secao-oculta fade-in">
+    <h2>Sobre mim</h2>
+    <p>Olá! Estou aprendendo programação e construindo meu portfólio.</p>
+    <button onclick="voltar()">Voltar</button>
+  </section>
+
+  <section id="projetos" class="secao-oculta fade-in">
+    <h2>Projetos</h2>
+    <div class="projetos-container">
+      <div class="card">
+        <h3>Projeto 1</h3>
+        <p>Este será meu primeiro projeto. Em breve, adicionarei mais detalhes.</p>
+        <a href="#" class="btn">Ver projeto</a>
+      </div>
+      <div class="card">
+        <h3>Projeto 2</h3>
+        <p>Projeto fictício para fins de estudo e layout. Código em breve!</p>
+        <a href="#" class="btn">Ver projeto</a>
+      </div>
+    </div>
+    <button onclick="voltar()">Voltar</button>
+  </section>
+
+  <section id="redes-sociais" class="secao-oculta fade-in">
+    <h2>Redes Sociais</h2>
+    <div class="redes-container">
+      <a href="https://github.com/Renanxff2" target="_blank" class="social-link">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/renan-viana-832038268/" target="_blank" class="social-link">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="mailto:renanvianabezerra987@gmail.com" class="social-link">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+    </div>
+    <button onclick="voltar()">Voltar</button>
+  </section>
+
+  <footer>
+    <p>© 2025 - Renan Viana Bezerra</p>
+  </footer>
+<script>
+  function mostrarSecao(id) {
+    // Esconde tudo
+    document.getElementById("header").style.display = "none";
+    document.getElementById("sobre").style.display = "none";
+    document.getElementById("projetos").style.display = "none";
+    document.getElementById("redes-sociais").style.display = "none";
+
+    // Mostra só a seção clicada
+    document.getElementById(id).style.display = "block";
+  }
+
+  function voltar() {
+    // Volta ao header
+    document.getElementById("header").style.display = "block";
+    document.getElementById("sobre").style.display = "none";
+    document.getElementById("projetos").style.display = "none";
+    document.getElementById("redes-sociais").style.display = "none";
+    
+  }
+ 
+</script>
+
+</body>
+
+</html>

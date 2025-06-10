@@ -1,0 +1,310 @@
+/* === ESTILOS GERAIS DO BODY === */
+body, html {
+  /* Ocupa toda altura da tela */
+  height: 100%;
+
+  /* Remove margens padrão */
+  margin: 0;
+
+  /* Define layout flexível em coluna para forçar footer no final */
+  display: flex;
+  flex-direction: column;
+
+  /* Define a imagem de fundo da página */
+  background: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FsYXh5JTIwd2FsbHBhcGVyfGVufDB8fDB8fHww');
+
+  /* Faz a imagem cobrir toda a área visível, mantendo proporção */
+  background-size: cover;
+
+  /* Centraliza a imagem de fundo na tela */
+  background-position: center;
+
+  /* Define a cor do texto em um tom claro */
+  color: #f0f0f5;
+
+  /* Define a fonte usada no corpo do site */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Conteúdo principal que cresce e ocupa espaço disponível */
+.main-content {
+  flex: 1;
+  /* Mantém o conteúdo com largura máxima centralizada */
+  max-width: 900px;
+  margin: 20px auto;
+  width: 100%;
+}
+
+/* === ESTILOS DO HEADER (cabeçalho) === */
+header {
+  background-color: rgba(10, 10, 30, 0.85);
+  color: #e0e0ff;
+  text-align: center;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* === MENU DE NAVEGAÇÃO === */
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav ul li a {
+  color: #e0e0ff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  background-color: rgba(224, 224, 255, 0.3);
+}
+
+/* === ESTILOS DAS SEÇÕES (sobre, projetos, contato) === */
+section {
+  background-color: rgba(40, 40, 90, 0.75);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: #dce0ff;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* === ESTILOS DO FOOTER (rodapé no final da página) === */
+footer {
+  /* Posição está no fluxo normal, sem ficar fixo */
+  position: static;
+
+  /* Ocupa toda a largura */
+  width: 100%;
+
+  /* Cor de fundo azul escuro com leve transparência */
+  background-color: rgba(20, 20, 50, 0.9);
+
+  /* Cor do texto clara */
+  color: #b0b0c0;
+
+  /* Centraliza o texto */
+  text-align: center;
+
+  /* Padding menor para rodapé discreto */
+  padding: 8px 10px;
+
+  /* Fonte menor que o padrão */
+  font-size: 0.8rem;
+
+  /* Linha superior para separar do conteúdo */
+  border-top: 1px solid rgba(100, 100, 140, 0.4);
+
+  /* Sombra leve no topo */
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+
+  /* Índice de empilhamento padrão */
+  z-index: auto;
+}
+
+/* === RESPONSIVIDADE PARA TELAS PEQUENAS === */
+@media (max-width: 600px) {
+  body {
+    font-size: 90%;
+  }
+
+  header {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  section {
+    margin: 15px 10px;
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}
+
+/* === ESTILOS DE IMAGEM DE PERFIL === */
+.foto-perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0ff;
+  margin: 15px auto;
+  display: block;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* === ESTILOS DE PROJETOS === */
+.projetos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.card p {
+  color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #444e7a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #5a66a3;
+}
+
+/* === REDES SOCIAIS === */
+#redes-sociais {
+  background-color: rgba(40, 40, 90, 0.75);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 900px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color: #dce0ff;
+  text-align: center;
+  margin: 20px auto 0;
+}
+
+.redes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e0e0ff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.social-link i {
+  font-size: 1.3rem;
+}
+
+.social-link:hover {
+  background-color: rgba(224, 224, 255, 0.1);
+  transform: translateY(-2px) scale(1.05);
+}
+
+a, button {
+  transition: all 0.3s ease;
+}
+
+header nav ul a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Para telas menores que 600px (celulares) */
+@media (max-width: 600px) {
+  body {
+    font-size: 90%;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section {
+    margin: 15px 10px;
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}
+
+a:focus, button:focus {
+  outline: 3px solid #aad8ff;
+  outline-offset: 3px;
+}
+
+
+.secao-oculta {
+  display: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #555;
+}
