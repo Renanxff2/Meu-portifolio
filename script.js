@@ -1,34 +1,17 @@
-
-  // Lista com os IDs das seções
+document.addEventListener("DOMContentLoaded", () => {
   const secoes = ["header", "sobre", "projetos", "redes-sociais"];
 
-  // Função para mostrar uma seção e esconder as outras
-  function mostrarSecao(id) {
+  window.mostrarSecao = function (id) {
     secoes.forEach(secao => {
-      const elemento = document.getElementById(secao);
-      if (elemento) {
-        elemento.style.display = (secao === id) ? "block" : "none";
-      }
+      document.getElementById(secao).style.display = "none";
     });
-  }
+    document.getElementById(id).style.display = "block";
+  };
 
-  // Função para voltar à seção principal (header)
-  function voltar() {
-    mostrarSecao("header");
-  }
-
-function mostrarSecao(id) {
-      document.getElementById("header").style.display = "none";
-      document.getElementById("sobre").style.display = "none";
-      document.getElementById("projetos").style.display = "none";
-      document.getElementById("redes-sociais").style.display = "none";
-
-      document.getElementById(id).style.display = "block";
-    }
-
-    function voltar() {
-      document.getElementById("header").style.display = "block";
-      document.getElementById("sobre").style.display = "none";
-      document.getElementById("projetos").style.display = "none";
-      document.getElementById("redes-sociais").style.display = "none";
-    }
+  window.voltar = function () {
+    secoes.forEach(secao => {
+      document.getElementById(secao).style.display = "none";
+    });
+    document.getElementById("header").style.display = "block";
+  };
+});
