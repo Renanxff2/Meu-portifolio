@@ -1,38 +1,29 @@
 /* === ESTILOS GERAIS DO BODY === */
 body, html {
-  /* Ocupa toda altura da tela */
   height: 100%;
-
-  /* Remove margens padrão */
   margin: 0;
-
-  /* Define layout flexível em coluna para forçar footer no final */
   display: flex;
   flex-direction: column;
-
-  /* Define a imagem de fundo da página */
   background: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FsYXh5JTIwd2FsbHBhcGVyfGVufDB8fDB8fHww');
-
-  /* Faz a imagem cobrir toda a área visível, mantendo proporção */
   background-size: cover;
-
-  /* Centraliza a imagem de fundo na tela */
   background-position: center;
-
-  /* Define a cor do texto em um tom claro */
   color: #f0f0f5;
-
-  /* Define a fonte usada no corpo do site */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh; /* garante altura mínima para footer */
 }
 
 /* Conteúdo principal que cresce e ocupa espaço disponível */
 .main-content {
   flex: 1;
-  /* Mantém o conteúdo com largura máxima centralizada */
   max-width: 900px;
   margin: 20px auto;
   width: 100%;
+
+  /* Centraliza os conteúdos internos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* === ESTILOS DO HEADER (cabeçalho) === */
@@ -45,6 +36,23 @@ header {
   font-size: 1.5rem;
   letter-spacing: 1px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+
+  /* Centraliza todos os itens e espaça verticalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Centralizar foto de perfil no header */
+.foto-perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0ff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  /* margin e display removidos pois header já está flex com align-items: center */
 }
 
 /* === MENU DE NAVEGAÇÃO === */
@@ -79,82 +87,21 @@ section {
   color: #dce0ff;
   line-height: 1.6;
   margin-bottom: 20px;
-}
 
-/* === ESTILOS DO FOOTER (rodapé no final da página) === */
-footer {
-  /* Posição está no fluxo normal, sem ficar fixo */
-  position: static;
-
-  /* Ocupa toda a largura */
-  width: 100%;
-
-  /* Cor de fundo azul escuro com leve transparência */
-  background-color: rgba(20, 20, 50, 0.9);
-
-  /* Cor do texto clara */
-  color: #b0b0c0;
-
-  /* Centraliza o texto */
+  /* Centraliza conteúdo das seções */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-
-  /* Padding menor para rodapé discreto */
-  padding: 8px 10px;
-
-  /* Fonte menor que o padrão */
-  font-size: 0.8rem;
-
-  /* Linha superior para separar do conteúdo */
-  border-top: 1px solid rgba(100, 100, 140, 0.4);
-
-  /* Sombra leve no topo */
-  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
-
-  /* Índice de empilhamento padrão */
-  z-index: auto;
-}
-
-/* === RESPONSIVIDADE PARA TELAS PEQUENAS === */
-@media (max-width: 600px) {
-  body {
-    font-size: 90%;
-  }
-
-  header {
-    font-size: 1.2rem;
-    padding: 15px;
-  }
-
-  section {
-    margin: 15px 10px;
-    padding: 15px;
-    max-width: 100%;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    padding: 6px 8px;
-  }
-}
-
-/* === ESTILOS DE IMAGEM DE PERFIL === */
-.foto-perfil {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #e0e0ff;
-  margin: 15px auto;
-  display: block;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 /* === ESTILOS DE PROJETOS === */
 .projetos-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* centraliza os cards */
   gap: 20px;
+  margin-top: 15px;
 }
 
 .card {
@@ -163,7 +110,7 @@ footer {
   border-radius: 10px;
   padding: 20px;
   width: 280px;
-  text-align: left;
+  text-align: left; /* deixa o texto dos cards alinhado à esquerda */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
@@ -240,32 +187,30 @@ footer {
   transform: translateY(-2px) scale(1.05);
 }
 
-a, button {
-  transition: all 0.3s ease;
+/* === ESTILOS DO FOOTER (rodapé no final da página) === */
+footer {
+  position: static;
+  width: 100%;
+  background-color: rgba(20, 20, 50, 0.9);
+  color: #b0b0c0;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(100, 100, 140, 0.4);
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+  z-index: auto;
+  flex-shrink: 0; /* garante que o footer não "encolha" */
 }
 
-header nav ul a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Para telas menores que 600px (celulares) */
+/* === RESPONSIVIDADE PARA TELAS PEQUENAS === */
 @media (max-width: 600px) {
   body {
     font-size: 90%;
+  }
+
+  header {
+    font-size: 1.2rem;
+    padding: 15px;
   }
 
   header nav ul {
@@ -289,7 +234,6 @@ a:focus, button:focus {
   outline: 3px solid #aad8ff;
   outline-offset: 3px;
 }
-
 
 .secao-oculta {
   display: none;
