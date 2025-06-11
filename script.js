@@ -1,17 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const secoes = ["header", "sobre", "projetos", "redes-sociais"];
+function mostrarSecao(id) {
+  const secoes = ["sobre", "projetos", "redes-sociais"];
 
-  window.mostrarSecao = function (id) {
-    secoes.forEach(secao => {
-      document.getElementById(secao).style.display = "none";
-    });
-    document.getElementById(id).style.display = "block";
-  };
+  // Esconde todas as seções
+  secoes.forEach(secao => {
+    document.getElementById(secao).classList.add("secao-oculta");
+  });
 
-  window.voltar = function () {
-    secoes.forEach(secao => {
-      document.getElementById(secao).style.display = "none";
-    });
-    document.getElementById("header").style.display = "block";
-  };
-});
+  // Esconde o header
+  document.getElementById("header").style.display = "none";
+
+  // Mostra a seção clicada
+  document.getElementById(id).classList.remove("secao-oculta");
+}
+
+function voltar() {
+  // Mostra o header
+  document.getElementById("header").style.display = "flex";
+
+  // Esconde todas as seções
+  const secoes = ["sobre", "projetos", "redes-sociais"];
+  secoes.forEach(secao => {
+    document.getElementById(secao).classList.add("secao-oculta");
+  });
+}
