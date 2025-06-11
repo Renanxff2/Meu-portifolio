@@ -1,35 +1,30 @@
-/* === ESTILOS GERAIS DO BODY === */
-body, html {
-  height: 100%;
+/* === RESET E BASE === */
+* {
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f5;
+}
+
+/* === LAYOUT BASE === */
+body {
   background: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FsYXh5JTIwd2FsbHBhcGVyfGVufDB8fDB8fHww');
   background-size: cover;
   background-position: center;
-  color: #f0f0f5;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh; /* garante altura mínima para footer */
 }
 
-/* Conteúdo principal que cresce e ocupa espaço disponível */
-.main-content {
-  flex: 1;
+.wrapper {
+  min-height: 100vh;
   display: flex;
-  flex-direction:column ;
-  justify-content: center;
-  align-items: center;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-section, header {
-  width: 100%;
-  max-width: 900px;
+  flex-direction: column;
 }
 
-/* === ESTILOS DO HEADER (cabeçalho) === */
+/* === HEADER === */
 header {
   background-color: rgba(10, 10, 30, 0.85);
   color: #e0e0ff;
@@ -37,17 +32,13 @@ header {
   padding: 20px;
   font-weight: 600;
   font-size: 1.5rem;
-  letter-spacing: 1px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-
-  /* Centraliza todos os itens e espaça verticalmente */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
 }
 
-/* Centralizar foto de perfil no header */
 .foto-perfil {
   width: 150px;
   height: 150px;
@@ -55,16 +46,11 @@ header {
   object-fit: cover;
   border: 3px solid #e0e0ff;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  /* margin e display removidos pois header já está flex com align-items: center */
 }
 
-/* === MENU DE NAVEGAÇÃO === */
 header nav ul {
   list-style: none;
-  padding: 0;
-  margin: 15px 0 0 0;
   display: flex;
-  justify-content: center;
   gap: 20px;
 }
 
@@ -81,30 +67,37 @@ header nav ul li a:hover {
   background-color: rgba(224, 224, 255, 0.3);
 }
 
-/* === ESTILOS DAS SEÇÕES (sobre, projetos, contato) === */
+/* === CONTEÚDO CENTRAL === */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* === SEÇÕES === */
 section {
   background-color: rgba(40, 40, 90, 0.75);
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  color: #dce0ff;
-  line-height: 1.6;
   margin-bottom: 20px;
-
-  /* Centraliza conteúdo das seções */
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
 }
 
-/* === ESTILOS DE PROJETOS === */
+.secao-oculta {
+  display: none;
+}
+
+/* === CARDS DE PROJETOS === */
 .projetos-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* centraliza os cards */
+  justify-content: center;
   gap: 20px;
-  margin-top: 15px;
 }
 
 .card {
@@ -113,7 +106,7 @@ section {
   border-radius: 10px;
   padding: 20px;
   width: 280px;
-  text-align: left; /* deixa o texto dos cards alinhado à esquerda */
+  text-align: left;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
@@ -148,24 +141,13 @@ section {
 }
 
 /* === REDES SOCIAIS === */
-#redes-sociais {
-  background-color: rgba(40, 40, 90, 0.75);
-  padding: 25px;
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  color: #dce0ff;
-  text-align: center;
-  margin: 20px auto 0;
-}
-
-.redes-container {
+#redes-sociais .redes-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25px;
-  margin-top: 15px;
   flex-wrap: wrap;
+  margin-top: 15px;
 }
 
 .social-link {
@@ -177,12 +159,8 @@ section {
   font-size: 1.1rem;
   padding: 8px 12px;
   border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
   background-color: rgba(255, 255, 255, 0.05);
-}
-
-.social-link i {
-  font-size: 1.3rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .social-link:hover {
@@ -190,56 +168,19 @@ section {
   transform: translateY(-2px) scale(1.05);
 }
 
-/* === ESTILOS DO FOOTER (rodapé no final da página) === */
+/* === FOOTER FIXO AO FINAL === */
 footer {
   width: 100%;
   background-color: rgba(20, 20, 50, 0.9);
   color: #b0b0c0;
   text-align: center;
-  padding: 8px 10px;
+  padding: 10px;
   font-size: 0.8rem;
   border-top: 1px solid rgba(100, 100, 140, 0.4);
   box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
 }
 
-
-/* === RESPONSIVIDADE PARA TELAS PEQUENAS === */
-@media (max-width: 600px) {
-  body {
-    font-size: 90%;
-  }
-
-  header {
-    font-size: 1.2rem;
-    padding: 15px;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  section {
-    margin: 15px 10px;
-    padding: 15px;
-    max-width: 100%;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    padding: 6px 8px;
-  }
-}
-
-a:focus, button:focus {
-  outline: 3px solid #aad8ff;
-  outline-offset: 3px;
-}
-
-.secao-oculta {
-  display: none;
-}
-
+/* === BOTÕES === */
 button {
   margin-top: 20px;
   padding: 10px 20px;
@@ -254,11 +195,25 @@ button:hover {
   background-color: #555;
 }
 
+/* === ACESSIBILIDADE === */
+a:focus, button:focus {
+  outline: 3px solid #aad8ff;
+  outline-offset: 3px;
+}
 
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* === RESPONSIVO === */
+@media (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  section {
+    margin: 15px 10px;
+    padding: 15px;
+  }
 }
